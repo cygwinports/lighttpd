@@ -1,0 +1,22 @@
+DESCRIPTION="Light HTTP daemon"
+HOMEPAGE="http://www.lighttpd.net/"
+SRC_URI="http://www.lighttpd.net/download/${P}.tar.bz2"
+
+CYGCONF_ARGS="
+	--enable-lfs
+	--disable-ipv6
+	--with-bzip2
+	--with-fam
+	--with-gdbm
+	--with-ldap
+	--with-lua LUA_CFLAGS=-I/usr/include/lua51 LUA_LIBS=-llua51
+	--with-mysql
+	--with-openssl
+	--with-pcre
+	--with-webdav-props
+	--without-attr
+	--without-kerberos5
+	--without-memcache
+	--without-valgrind
+	--without-webdav-locks
+"
