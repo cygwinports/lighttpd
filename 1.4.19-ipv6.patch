@@ -1,0 +1,28 @@
+--- origsrc/lighttpd-1.4.19/src/mod_extforward.c	2008-03-02 06:59:18.000000000 -0600
++++ src/lighttpd-1.4.19/src/mod_extforward.c	2008-08-08 00:49:03.046875000 -0500
+@@ -293,6 +293,7 @@
+ 	return NULL;
+ }
+ 
++#ifdef HAVE_IPV6
+ struct addrinfo *ipstr_to_sockaddr(const char *host)
+ {
+    struct addrinfo hints, *res0;
+@@ -325,6 +326,7 @@
+ 
+    return res0;
+ }
++#endif
+ 
+ 
+ 
+@@ -392,7 +394,9 @@
+ 
+ 	if (real_remote_addr != NULL) { /* parsed */
+ 		sock_addr sock;
++#ifdef HAVE_IPV6
+ 		struct addrinfo *addrs_left;
++#endif
+ 		server_socket *srv_sock = con->srv_socket;
+ 		data_string *forwarded_proto = (data_string *)array_get_element(con->request.headers, "X-Forwarded-Proto");
+ 
