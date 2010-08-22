@@ -1,0 +1,42 @@
+DESCRIPTION="Light HTTP daemon"
+HOMEPAGE="http://www.lighttpd.net/"
+SRC_URI="http://download.lighttpd.net/lighttpd/releases-${PV[1]}.${PV[2]}.x/${P}.tar.bz2"
+PATCH_URI="1.4.28-no-undefined.patch"
+
+CYGCONF_ARGS="
+	--libdir=/usr/lib/${PN}
+	--enable-lfs
+	--enable-ipv6
+	--with-bzip2
+	--with-fam
+	--with-gdbm
+	--with-kerberos5
+	--with-ldap
+	--with-lua
+	--with-mysql
+	--with-openssl
+	--with-pcre
+	--with-webdav-props
+	--with-attr
+	--without-memcache
+	--without-valgrind
+	--with-webdav-locks
+"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	insinto /etc/${PN}
+	doins ${S}/doc/config/*.conf
+
+	insinto /etc/${PN}/conf.d
+	doins ${S}/doc/config/conf.d/*.conf
+
+	insinto /etc/${PN}/vhosts.d
+	doins ${S}/doc/config/vhosts.d/*.template
+
+	make_etc_defaults /etc/${PN}
+}
+
+DOCS="doc/*.txt"

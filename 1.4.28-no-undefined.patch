@@ -1,0 +1,11 @@
+--- origsrc/lighttpd-1.4.28/src/Makefile.am	2010-08-11 15:44:17.000000000 -0500
++++ src/lighttpd-1.4.28/src/Makefile.am	2010-08-22 16:50:18.999262800 -0500
+@@ -88,7 +88,7 @@ lib_LTLIBRARIES += liblightcomp.la
+ liblightcomp_la_SOURCES=$(common_src)
+ liblightcomp_la_CFLAGS=$(AM_CFLAGS) $(LIBEV_CFLAGS)
+ liblightcomp_la_LDFLAGS = -avoid-version -no-undefined
+-liblightcomp_la_LIBADD = $(PCRE_LIB) $(SSL_LIB) $(FAM_LIBS) $(LIBEV_LIBS)
++liblightcomp_la_LIBADD = $(PCRE_LIB) $(SSL_LIB) $(FAM_LIBS) $(ATTR_LIB) $(LIBEV_LIBS)
+ common_libadd = liblightcomp.la
+ else
+ src += $(common_src)
