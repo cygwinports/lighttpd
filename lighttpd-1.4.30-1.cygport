@@ -7,20 +7,21 @@ CYGCONF_ARGS="
 	--libdir=/usr/lib/${PN}
 	--enable-lfs
 	--enable-ipv6
+	--with-attr
 	--with-bzip2
 	--with-fam
 	--with-gdbm
-	--with-kerberos5
+	--without-kerberos5
 	--with-ldap
 	--with-lua
 	--with-mysql
 	--with-openssl
 	--with-pcre
+	--with-webdav-locks
 	--with-webdav-props
-	--with-attr
+	--with-zlib
 	--without-memcache
 	--without-valgrind
-	--with-webdav-locks
 "
 
 src_install() {
@@ -40,3 +41,4 @@ src_install() {
 }
 
 DOCS="doc/*.txt"
+KEEP_LA_FILES="none"
