@@ -1,9 +1,0 @@
-category: Web
-requires: crypt libattr1 libbz2_1 libfam0 libgcc1 libgdbm4 libmysqlclient18 libopenldap2_3_0 libopenssl098 libpcre0 libsqlite3_0 libuuid1 libxml2 lua zlib0
-sdesc: "Web server"
-ldesc: "Security, speed, compliance, and flexibility -- all of these 
-describe lighttpd which is rapidly redefining efficiency of a webserver; 
-as it is designed and optimized for high performance environments. With 
-a small memory footprint compared to other web-servers, effective 
-management of the cpu-load, and advanced feature set, lighttpd is the 
-perfect solution for every server that is suffering load problems."

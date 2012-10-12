@@ -1,4 +1,14 @@
-DESCRIPTION="Light HTTP daemon"
+NAME="lighttpd"
+VERSION=1.4.31
+RELEASE=1
+CATEGORY="Web"
+SUMMARY="Web server"
+DESCRIPTION="Security, speed, compliance, and flexibility -- all of these
+describe lighttpd which is rapidly redefining efficiency of a webserver; as it
+is designed and optimized for high performance environments. With a small
+memory footprint compared to other web-servers, effective management of the
+cpu-load, and advanced feature set, lighttpd is the perfect solution for every
+server that is suffering load problems."
 HOMEPAGE="http://www.lighttpd.net/"
 SRC_URI="http://download.lighttpd.net/lighttpd/releases-${PV[1]}.${PV[2]}.x/${P}.tar.bz2"
 PATCH_URI="1.4.28-no-undefined.patch"
@@ -11,7 +21,7 @@ CYGCONF_ARGS="
 	--with-bzip2
 	--with-fam
 	--with-gdbm
-	--without-kerberos5
+	--with-kerberos5
 	--with-ldap
 	--with-lua
 	--with-mysql
