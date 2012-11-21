@@ -1,5 +1,5 @@
 NAME="lighttpd"
-VERSION=1.4.31
+VERSION=1.4.32
 RELEASE=1
 CATEGORY="Web"
 SUMMARY="Web server"
