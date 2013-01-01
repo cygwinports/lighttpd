@@ -1,6 +1,6 @@
 NAME="lighttpd"
 VERSION=1.4.32
-RELEASE=1
+RELEASE=2
 CATEGORY="Web"
 SUMMARY="Web server"
 DESCRIPTION="Security, speed, compliance, and flexibility -- all of these
