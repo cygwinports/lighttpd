@@ -1,6 +1,6 @@
 NAME="lighttpd"
-VERSION=1.4.32
-RELEASE=2
+VERSION=1.4.34
+RELEASE=1
 CATEGORY="Web"
 SUMMARY="Web server"
 DESCRIPTION="Security, speed, compliance, and flexibility -- all of these
@@ -10,11 +10,11 @@ memory footprint compared to other web-servers, effective management of the
 cpu-load, and advanced feature set, lighttpd is the perfect solution for every
 server that is suffering load problems."
 HOMEPAGE="http://www.lighttpd.net/"
-SRC_URI="http://download.lighttpd.net/lighttpd/releases-${PV[1]}.${PV[2]}.x/${P}.tar.bz2"
-PATCH_URI="1.4.28-no-undefined.patch"
+SRC_URI="http://download.lighttpd.net/lighttpd/releases-${VERSION%.*}.x/${NAME}-${VERSION}.tar.xz"
+PATCH_URI="1.4.34-no-undefined.patch"
 
 CYGCONF_ARGS="
-	--libdir=/usr/lib/${PN}
+	--libdir=/usr/lib/${NAME}
 	--enable-lfs
 	--enable-ipv6
 	--with-attr
@@ -38,16 +38,16 @@ src_install() {
 	cd ${B}
 	cyginstall
 
-	insinto /etc/${PN}
+	insinto /etc/${NAME}
 	doins ${S}/doc/config/*.conf
 
-	insinto /etc/${PN}/conf.d
+	insinto /etc/${NAME}/conf.d
 	doins ${S}/doc/config/conf.d/*.conf
 
-	insinto /etc/${PN}/vhosts.d
+	insinto /etc/${NAME}/vhosts.d
 	doins ${S}/doc/config/vhosts.d/*.template
 
-	make_etc_defaults /etc/${PN}
+	make_etc_defaults /etc/${NAME}
 }
 
 DOCS="doc/*.txt"
