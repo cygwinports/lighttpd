@@ -1,5 +1,5 @@
 NAME="lighttpd"
-VERSION=1.4.45
+VERSION=1.4.53
 RELEASE=1
 CATEGORY="Web"
 SUMMARY="Web server"
@@ -11,7 +11,7 @@ cpu-load, and advanced feature set, lighttpd is the perfect solution for every
 server that is suffering load problems."
 HOMEPAGE="http://www.lighttpd.net/"
 SRC_URI="http://download.lighttpd.net/lighttpd/releases-${VERSION%.*}.x/${NAME}-${VERSION}.tar.xz"
-PATCH_URI="1.4.45-no-undefined.patch"
+PATCH_URI="1.4.53-no-undefined.patch"
 
 CYGCONF_ARGS="
 	--libdir=/usr/lib/${NAME}
